@@ -12,3 +12,11 @@
 
 }
 
+.custom-background-1 {
+    background: url("/images/bgbanner.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+
+

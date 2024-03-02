@@ -12,15 +12,79 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/006521c44e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-
+    <header class="mx-auto w-11/12">
+        <!-- Nav bar -->
+        <nav class="mt-4 mb-8">
+            <div class="navbar bg-base-100 justify-between">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm text-base dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Home">
+                                    <i class="fa-solid fa-house-chimney fa-xl"></i>
+                                </a>
+                            </li>
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Edit">
+                                    <i class="fa-solid fa-pencil fa-xl"></i>
+                                </a>
+                            </li>
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Add">
+                                    <i class="fa-solid fa-user-plus fa-xl"></i>
+                                </a>
+                            </li>
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Flag">
+                                    <i class="fa-solid fa-flag fa-xl"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h1 class="text-xl lg:text-4xl mulish font-extrabold text-[#12132D]">ThrowBack</h1>
+                </div>
+                <div class="flex gap-4">
+                    <div class="hidden lg:flex gap-4">
+                        <ul class="menu menu-horizontal text-base px-1 lg:justify-center lg:items-center gap-4">
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Home">
+                                    <i class="fa-solid fa-house-chimney fa-xl"></i>
+                                </a>
+                            </li>
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Edit">
+                                    <i class="fa-solid fa-pencil fa-xl"></i>
+                                </a>
+                            </li>
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Add">
+                                    <i class="fa-solid fa-user-plus fa-xl"></i>
+                                </a>
+                            </li>
+                            <li><a class="border rounded-[50px] bg-[#12132D08] p-3 tooltip" data-tip="Flag">
+                                    <i class="fa-solid fa-flag fa-xl"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-3">
+                        <a
+                            class="text-lg lg:text-xl mulish px-10 py-4 font-bold rounded-[50px] bg-[#797DFC] text-white">Sign
+                            In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-
     </main>
 
     <footer>

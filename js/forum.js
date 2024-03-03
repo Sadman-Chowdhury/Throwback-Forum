@@ -13,8 +13,15 @@ const loadAllData = async() => {
     displayData(allData);
 }
 
+const loadLatestData = async() => {
+    const res3 = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+    const data3 = await res3.json()
+    console.log(data3)
+    displayLatestData(data3);
+}
+
 const displayData = (posts) => {
-//1. get the container
+//get the container
 const postContainer = document.getElementById('post-container')
 
 postContainer.textContent = '';
@@ -25,7 +32,7 @@ posts.forEach(post => {
     postCard.classList = `bg-[#F3F3F5] rounded-3xl p-10 flex flex-col gap-4`
 
     const highlightContainer = document.getElementById('highlight-container')
-    //active color condition
+    //active color
     const activeColor = post.isActive ? 'bg-green-500' : 'bg-red-500';
 
     //innerHtml
@@ -101,6 +108,43 @@ posts.forEach(post => {
 
 }
 
+const displayLatestData = (posts) => {
+    const latestContainer = document.getElementById('latest-container')
+
+    posts.forEach(post => {
+        //Creating a div
+        const latestCard = document.createElement('div');
+        latestCard.classList = `card border bg-base-100 shadow-xl p-6 space-y-5`
+    
+        //innerHtml
+        latestCard.innerHTML = `
+        <img src="${post.cover_image}" alt="Shoes"
+        class="rounded-xl" />
+    <div class="flex items-center gap-4">
+        <i class="fa-regular fa-calendar-check fa-xl"></i>
+        <p class="text-[#12132D99]">${post?.author?.posted_date || 'No publish date'}</p>
+    </div>
+    <div class="">
+        <h2 class="card-title text-[#12132D]">${post.title}</h2>
+        <p>${post.description}</p>
+    </div>
+    <div class="flex gap-4">
+        <div class="avatar">
+            <div class="w-[44px] rounded-full">
+                <img src="${post.profile_image}" />
+            </div>
+        </div>
+        <div class="space-y-2">
+            <h4 class="text-[#12132D] font-bold">${post.author.name}</h4>
+            <span class="text-[#12132D99]">${post?.author?.designation || 'Unknown'}</span>
+        </div>
+    </div>
+        `;
+        //AppendChild
+        latestContainer.appendChild(latestCard);
+    });
+}
+
 const getTextElementValueById = (elementId) => {
     const element = document.getElementById(elementId);
     const elementValueText = element.innerText;
@@ -137,3 +181,4 @@ const toggleLoadingSpinner = (isLoading) => {
 }
 
 loadAllData();
+loadLatestData();

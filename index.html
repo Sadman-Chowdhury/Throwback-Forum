@@ -95,8 +95,9 @@
                     and wp
                     forum coffee mug!</p>
                 <label class="input input-bordered flex items-center rounded-[50px]">
-                    <input type="text" class="grow" placeholder="Search here anything" />
-                    <button class="bg-[#797DFC] rounded-[50px] px-2 lg:px-6 py-1 text-white font-bold">Search</button>
+                    <input id="search-field" type="text" class="grow" placeholder="Search here anything" />
+                    <button onclick="handleSearch()"
+                        class="bg-[#797DFC] rounded-[50px] px-2 lg:px-6 py-1 text-white font-bold">Search</button>
                 </label>
             </div>
             <!-- user part -->
@@ -130,6 +131,10 @@
                 app.
                 The<br>integrated testing
                 features allow for a streamlined .</p>
+            <!-- Loadind spinner -->
+            <div id="loading-spinner" class="hidden text-center mt-4 mb-4">
+                <span class="loading loading-bars loading-lg"></span>
+            </div>
             <div class="flex flex-col lg:flex-row gap-5">
                 <!-- Posts -->
                 <div id="post-container" class="flex flex-col gap-5">
@@ -179,21 +184,17 @@
                 </div>
 
                 <!-- Highlight part -->
-                <div>
+                <div class="w-full lg:w-5/12">
                     <div class="mulish bg-[#F3F3F5] p-8 rounded-3xl space-y-4 flex-shrink">
-                        <div class="flex justify-between ">
+                        <div class="flex justify-between">
                             <h4 class="text-xl font-bold">Title</h4>
                             <div class="flex items-center gap-2">
                                 <i class="fa-solid fa-check-double" style="color: #96d35f;"></i>
-                                <p>Mark as read (<span>0</span>) </p>
+                                <p>Mark as read (<span id="post-count">0</span>) </p>
                             </div>
                         </div>
-                        <div class="flex justify-between bg-white p-4 rounded-2xl">
-                            <h3 class="w-1/2">10 Kids Unaware of Their Halloween Costume</h3>
-                            <div class="flex items-center gap-3">
-                                <i class="fa-regular fa-eye"></i>
-                                <span>1200</span>
-                            </div>
+                        <div id="highlight-container" class="">
+
                         </div>
                     </div>
                 </div>

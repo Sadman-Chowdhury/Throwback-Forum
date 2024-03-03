@@ -41,7 +41,7 @@ posts.forEach(post => {
     <div class="flex gap-4">
         <div class="indicator">
             <span id="active-status" class="indicator-item badge badge-secondary border-none ${activeColor}"></span>
-            <div class="grid w-[72px] h-[72px] bg-base-300 place-items-center rounded-xl"><img src="${post.image}" alt="">
+            <div class="grid w-[72px] h-[72px] bg-base-300 place-items-center rounded-xl"><img class="rounded-xl" src="${post.image}" alt="">
             </div>
         </div>
         <div class="flex flex-col gap-5 w-full">
@@ -82,13 +82,13 @@ posts.forEach(post => {
 
     toggleLoadingSpinner(false);
 
-    // Add event listener to the highlight-btn inside the post card
+    // Add event listener for highlight-btn
     const highlightBtn = postCard.querySelector('.highlight-btn');
     highlightBtn.addEventListener('click', () => {
-        // Create a new div for the post details
+        //New div
         const postDetails = document.createElement('div');
         postDetails.classList = `flex justify-between bg-white p-4 rounded-2xl gap-4 mb-4`;
-        // Set the content for the post details
+        //innerHtml
         postDetails.innerHTML = `
         <h3 class="w-1/2">${post.title}</h3>
             <div class="flex items-center gap-3">
@@ -96,16 +96,15 @@ posts.forEach(post => {
                  <span>${post.view_count}</span>
              </div>
         `;
-        // Append the post details to the details container
+        // Append
         highlightContainer.appendChild(postDetails);
 
         const currentCount = getTextElementValueById('post-count')
         const updatedCount = currentCount + 1;
         setTextElementValueById('post-count', updatedCount);
 
+        });
     });
-});
-
 }
 
 const displayLatestData = (posts) => {
@@ -163,8 +162,6 @@ const handleSearch = () => {
 
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
-    console.log(searchText);
-
         setTimeout(() => {
             loadData(searchText);
         }, 2000);

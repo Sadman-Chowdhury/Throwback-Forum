@@ -1,10 +1,16 @@
 const loadData = async(searchText) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`)
-    console.log(res)
     const data = await res.json()
     console.log(data)
     const postData = data.posts
     displayData(postData);
+}
+
+const loadAllData = async() => {
+    const res2 = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+    const data2 = await res2.json()
+    const allData = data2.posts
+    displayData(allData);
 }
 
 const displayData = (posts) => {
@@ -121,7 +127,7 @@ const handleSearch = () => {
 }
 
 //toggle loading spinner
-const toggleLoadingSpinner = (isLoading, delay) => {
+const toggleLoadingSpinner = (isLoading) => {
     const loadingSpinner = document.getElementById('loading-spinner');
     if(isLoading){
             loadingSpinner.classList.remove('hidden');
@@ -129,3 +135,5 @@ const toggleLoadingSpinner = (isLoading, delay) => {
         loadingSpinner.classList.add('hidden')
     }
 }
+
+loadAllData();
